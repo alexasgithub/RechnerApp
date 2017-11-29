@@ -7,6 +7,11 @@ public class UPNStack {
 	private ArrayList<StackItem> stack = new ArrayList<StackItem>();	
 	private int errorState = 0;
 
+	public UPNStack() {
+		this.stack = new ArrayList<StackItem>();
+		this.errorState = 0;
+	}
+
 	public void push(StackItem item) {
 		stack.add(0, item);
 	}
@@ -28,11 +33,25 @@ public class UPNStack {
 		}
 	}
 
-	public boolean isEmmpy() {
+	/**
+	 * Leeren des Stacks und Rücksetzen des ErrorStates
+	 */
+	public void clear() {
+		stack.clear();;
+		this.errorState = 0;
+	}
+
+	public boolean isEmpty() {
 		return stack.isEmpty();
 	}
-	
-	
+
+	/**
+	 * Evaluiert den aktuellen Stack
+	 * Die Berechnung wird ausgeführt und der Stack wird geleert (im Idealfall)
+	 *
+	 *
+ 	 * @return den Wert der Berechnung
+	 */
 	public float evalAndPop() {
 		try {
 			StackItem item = pop();
