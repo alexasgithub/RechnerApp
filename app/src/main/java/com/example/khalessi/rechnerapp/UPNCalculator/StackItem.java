@@ -1,5 +1,20 @@
 package com.example.khalessi.rechnerapp.UPNCalculator;
 
+/**
+ * StackItem implementiert eine zusammenfassende Klasse für
+ * die Items, die auf den UPNStack verwaltet werden
+ *
+ * Üblicherweise würde man hier (vielleicht) eher mit Vererbung arbeiten
+ * und die verschiedenen Typen von einer generischen Klasse ableiten
+ * (so im Sinne von: NumberItem, OpAddItem, OpTimesItem etc.)
+ *
+ * Ich habe mich dagegen entschieden und es eher wie ein klassisches Record
+ * organisiert.
+ *
+ * Damit der Zugriff vereinheitlicht wird, implementieren die Klasse das Interface
+ * IStackItem.
+ *
+ */
 public class StackItem implements IStackItem {
 	private int type = UNKOWN;
 	private float value = 0;

@@ -120,6 +120,5 @@ public class UPNStack {
 		
 		float ergebnis = stack.evalAndPop();
 		System.out.println("Ergebnis ist " + ergebnis + ", " + stack.isResultOk());
-
 	}
 }
